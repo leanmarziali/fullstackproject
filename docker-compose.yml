@@ -1,0 +1,34 @@
+ # Current and recommended version
+version: "3"
+
+# Services we would use to build and spin up the two containers
+services:
+
+    client:
+        build: ./client
+        expose:
+            - 3000
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./client:/srv/app/admin-client
+            - /client/node_modules
+        networks:
+            [webappnetwork]
+
+    server:
+        build: ./server
+        expose:
+            - 8000
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./server:/srv/app/admin-server
+            - /server/node_modules
+        networks:
+            [webappnetwork]
+
+# Shared network for containers
+networks:
+    webappnetwork:
+        driver: bridge
