@@ -14,5 +14,3 @@
 
 #### $npm run test (or)
 #### Docker runs apiTest automatically after App build process
-
-
