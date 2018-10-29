@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import MessageView from './Message.view';
 import { fetchMessage } from '../../actions';
 
-
-// Prepare  data for MessageView (presentational component).
+// Prepare data for MessageView (presentational component).
 const mapStateToProps = (state) => (
     {
       message: state.SentMessage
